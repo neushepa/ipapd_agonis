@@ -21,6 +21,12 @@ Route.on('/').render('welcome').as ('landing')
 Route.get('register', 'Auth/RegisterController.index').as('register.index')
 Route.post('register', 'Auth/RegisterController.store').as('register.store')
 
+Route.get('login', 'Auth/LoginController.index').as('login.index')
+Route.post('login', 'Auth/LoginController.check').as('login.check')
+Route.get('logout', 'Auth/LoginController.logout').as('logout')
+
+Route.get('dashboard', 'DashboardController.index').as('dashboard')
+
 Route.get('/posts', 'PostController.index').as('posts.index')
 Route.get('/posts/create', 'PostController.create').as('posts.create')
 Route.post('/posts/store', 'PostController.store').as('posts.store')
