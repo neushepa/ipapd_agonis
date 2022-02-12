@@ -24,7 +24,7 @@ class LoginController {
 
   async logout({ auth, response }) {
     await auth.logout()
-    return response.route('login.index')
+    return response.redirect('/')
   }
 
 }
